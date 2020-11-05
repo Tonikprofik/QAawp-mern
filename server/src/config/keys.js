@@ -1,3 +1,3 @@
 module.exports = {
-    DB_URI: "mongodb+srv://root:TOTDqGAhvhT9lYlX@cluster0.fathb.mongodb.net/stackoverflow?retryWrites=true&w=majority"
-}
+    DB_URI: "mongodb+srv://admin:atlasadmin@cluster0.6n7hp.gcp.mongodb.net/QaApp?retryWrites=true&w=majority"
+}   
