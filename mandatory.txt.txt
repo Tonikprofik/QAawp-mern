@@ -5,7 +5,7 @@ Advanced Web Programming: Mandatory project
 
 WU-F20v - Tony Thai Do
 Thank you for the feedback. Im trying to figure it out.
-Im got close to finish and show the answers. 
+Im got post and show the answers. 
 I'll get it soon working on heroku.
 Heres link to the right repo, i added you as a collaborator.
 
