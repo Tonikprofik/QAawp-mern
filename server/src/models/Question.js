@@ -11,13 +11,7 @@ let questionSchema = new Schema(
         },
         points: {
             type: Number
-        },
-
-        // array of objects
-        answers: [{
-            body: { type: String },
-            points: { type: Number }
-        }]
+        }
 
     }, {
         collection: 'questions'
