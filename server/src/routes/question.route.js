@@ -4,10 +4,23 @@ let mongoose = require('mongoose'),
 
 // Question Model
 let questionSchema = require('../models/Question');
+let answerSchema = require('../models/Answer');
 
 // CREATE a question
 router.route('/create-question').post((req, res, next) => {
     questionSchema.create(req.body, (error, data) => {
+        if (error) {
+            res.status(500).send(err);
+        } else {
+            console.log(data)
+            res.status(201).json(data)
+        }
+    })
+});
+
+// CREATE an answer
+router.route('/create-answer/:id').post((req, res, next) => {
+    answerSchema.create(req.body, (error, data) => {
         if (error) {
             res.status(500).send(err);
         } else {
@@ -28,13 +41,28 @@ router.route('/').get((req, res) => {
     })
 })
 
-// Get single question
-router.route('/question/:id').get((req, res) => {
-    questionSchema.findById(req.params.id, (error, data) => {
+// Get answers
+router.route('/answers/:id').get((req, res) => {
+    const questionID = req.params.id;
+
+    answerSchema.find({"question": mongoose.Types.ObjectId(questionID)}, (error, data) => {
         if (error) {
             res.status(500).send(err);
         } else {
-            res.status(200).json(data)
+            res.status(200).json(data);
+        }
+    })
+})
+
+// Get single question
+router.route('/question/:id').get((req, res) => {
+    const questionID = req.params.id;
+
+    questionSchema.findById(questionID, (error, data) => {
+        if (error) {
+            res.status(500).send(err);
+        } else {
+            res.status(200).json(data);
         }
     })
 })

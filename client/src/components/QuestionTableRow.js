@@ -10,9 +10,11 @@ export default class QuestionTableRow extends Component {
     }
 
     render() {
+        let questionId = "/question/" + this.props.obj._id;
+
         return (
             <tr>
-                <td>{this.props.obj.title}</td>
+                <td><a href={questionId}>{this.props.obj.title}</a></td>
                 <td>{this.props.obj.body}</td>
                 <td>{this.props.obj.points}</td>
             </tr>

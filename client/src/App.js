@@ -10,8 +10,8 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import CreateQuestion from "./components/create-question.component";
-import Question from "./components/question.component";
 import CreateAnswer from "./components/create-answer.component";
+import Question from "./components/question.component";
 import QuestionList from "./components/question-list.component";
 
 const API_URL = process.env.REACT_APP_API;
@@ -41,12 +41,7 @@ function App() {
                   Questions
                 </Link>
               </Nav>
-            </Nav>
-
-            <Nav>
-                <Link to={"/create-answer"} className="nav-link">
-                  Answers
-                </Link>
+              
             </Nav>
 
           </Container>
@@ -55,12 +50,11 @@ function App() {
 
       <Container>
         <Row>
-          <Col md={12}>
+          <Col md={12} className="mt-5">
             <div className="wrapper">
               <Switch>
                 <Route exact path='/' component={QuestionList} />
                 <Route path="/create-question" component={CreateQuestion} />
-                <Route path ="/create-answer"component = {CreateAnswer}/>
                 <Route path="/question/:id" component={Question} />
                 <Route path="/question-list" component={QuestionList} />
               </Switch>

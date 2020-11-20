@@ -12,7 +12,6 @@ let questionSchema = new Schema(
         points: {
             type: Number
         }
-
     }, {
         collection: 'questions'
     }
