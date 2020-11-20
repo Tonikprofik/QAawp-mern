@@ -41,7 +41,6 @@ function App() {
                   Questions
                 </Link>
               </Nav>
-              
             </Nav>
 
           </Container>
@@ -55,6 +54,7 @@ function App() {
               <Switch>
                 <Route exact path='/' component={QuestionList} />
                 <Route path="/create-question" component={CreateQuestion} />
+                <Route path="/create-answer" component={CreateAnswer} />
                 <Route path="/question/:id" component={Question} />
                 <Route path="/question-list" component={QuestionList} />
               </Switch>
