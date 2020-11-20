@@ -19,7 +19,8 @@ export default class CreateQuestion extends Component {
     this.state = {
       title: '',
       body: '',
-      points: 0
+      points: 0,
+      answers: []
     }
   }
 
@@ -37,14 +38,15 @@ export default class CreateQuestion extends Component {
     const questionData = {
         title: this.state.title,
         body: this.state.body,
-        points: this.state.points
+        points: this.state.points,
+        answers: this.state.answers
     };
 
     axios
         .post(`${API_URL}/create-question`, questionData)
         .then(res => console.log(res.data));
 
-    this.setState({title: '', body: '', points: 0});
+    this.setState({title: '', body: '', points: 0, answers: []});
   }
 
   render() {
